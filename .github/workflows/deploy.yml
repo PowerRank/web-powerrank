@@ -18,13 +18,8 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
 
-            #   Is this step needed?
-            - name: Setup node
-              uses: actions/setup-node@v3
-              with:
-                cache: npm
-                cache-dependency-path: ./package.json
-                node-version: 18
+            - name: Install dependencies
+              run: npm i
 
             - name: Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v1
@@ -35,4 +30,4 @@ jobs:
 
             - name: Deploy App
               run: |
-                npm i && npx sst deploy --stage prod
+                npx sst deploy --stage prod
