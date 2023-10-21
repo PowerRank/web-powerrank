@@ -1,5 +1,6 @@
 import type { SSTConfig } from "sst";
 import { RemixSite } from "sst/constructs";
+import { Tags } from "aws-cdk-lib";
 
 export default {
   config(_input) {
@@ -9,6 +10,7 @@ export default {
     };
   },
   stacks(app) {
+    Tags.of(app).add("power-rankings-hackathon", "2023");
     app.stack(function Site({ stack }) {
       const site = new RemixSite(stack, "site");
       stack.addOutputs({
