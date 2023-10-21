@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev --manual",
+    "dev": "sst bind remix dev",
     "start": "remix-serve ./build/index.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "sst:deploy": "sst deploy",
+    "sst:dev": "sst dev"
   },
   "dependencies": {
     "@remix-run/css-bundle": "^2.1.0",
@@ -24,7 +26,10 @@
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.38.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "sst": "^2.31.0",
+    "aws-cdk-lib": "2.95.1",
+    "constructs": "10.2.69"
   },
   "engines": {
     "node": ">=18.0.0"
