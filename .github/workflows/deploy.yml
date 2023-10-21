@@ -1,0 +1,35 @@
+name: Remix Deploy
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+    AWS_REGION: "us-east-1"
+
+permissions:
+    id-token: write # This is required for requesting the JWT
+    contents: read # This is required for actions/checkout
+
+jobs:
+    deploy:
+        name: Deploy
+        runs-on: ubuntu-latest
+        environment: production
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Install dependencies
+              run: npm i
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v1
+              with:
+                role-to-assume: ${{ secrets.AWS_REMIX_ROLE_ARN }}
+                role-session-name: GitHub_to_AWS_via_FederatedOIDC
+                aws-region: ${{ env.AWS_REGION }}
+
+            - name: Deploy App
+              run: |
+                npx sst deploy --stage prod
