@@ -1,6 +1,18 @@
 /** @type {import('@remix-run/dev').AppConfig} */
-export default {
+module.exports =  {
   ignoredRouteFiles: ["**/.*"],
+  serverModuleFormat: "cjs",
+  // serverDependenciesToBundle: ["react-bootstrap/Container",
+  //   "react-bootstrap/Nav",
+  //   "react-bootstrap/Navbar",
+  //   "prop-types-extra/lib/all",
+  //   "dom-helpers/css",
+  //   "react-transition-group/Transition",
+  //   "dom-helpers/transitionEnd",
+  //   "dom-helpers/addClass",
+  //   "dom-helpers/querySelectorAll",
+  //   "dom-helpers/removeClass",
+  //   "@restart/hooks/esm/useMergedRefs"],
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // publicPath: "/build/",
