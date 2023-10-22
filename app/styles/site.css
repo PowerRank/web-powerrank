@@ -1,0 +1,38 @@
+
+html,
+body {
+    background-color: #0A0E13;
+}
+
+/* Header */
+.navbar {
+    background-color: #000000;
+    color: #FFFFFF;
+    width: 100%;
+
+    /* To give smooth change */
+    -webkit-transition: all ease-out .5s;
+    -moz-transition: all ease-out .5s;
+    -o-transition: all ease-out .5s;
+    transition: all ease-out .5s;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    background-color: #000000;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+
+    max-height: 110px;
+}
+
+#copyright {
+    text-align: right;
+    font-size: 14px;
+}
