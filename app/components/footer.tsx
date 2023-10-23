@@ -2,8 +2,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import logo from '~/assets/images/poro-logo.png'
-import leagueLogo from '~/assets/images/LoL_Logo_Flat_WHITE.png'
+import footerLogo from '~/assets/images/footer-logo.png'
 
 export default function Footer() {
     return (
@@ -11,9 +10,10 @@ export default function Footer() {
             <Row>
                 <Col xs={12} sm={6} className="p-2">
                     <img
-                        src={leagueLogo}
+                        src={footerLogo}
                         alt="League of Legends"
-                        width="30%"
+                        className="footer-logo"
+                        width="50%"
                     />
                 </Col>
                 <Col xs={12} sm={6} className="p-2 align-self-end">
