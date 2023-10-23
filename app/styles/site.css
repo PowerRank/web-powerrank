@@ -1,20 +1,21 @@
 @font-face {
     font-family: "Shapiro";
-    src: url('../assets/fonts/Shapiro/font.woff2') format('woff2'), 
-    url('../assets/fonts/Shapiro/font.woff') format('woff');
-  }
+    src: url('../assets/fonts/Shapiro/font.woff2') format('woff2'),
+        url('../assets/fonts/Shapiro/font.woff') format('woff');
+}
 
 html,
 body {
     background-color: #0A0E13;
     color: #FFFFFF;
     font-family: 'Shapiro';
+    position: relative;
+    min-height: 100vh;
 }
 
 /* Header */
 .navbar {
     background-color: #000000;
-    color: #FFFFFF;
     width: 100%;
 
     /* To give smooth change */
@@ -24,15 +25,17 @@ body {
     transition: all ease-out .5s;
 }
 
+.navbar-brand {
+    font-size: 16px;
+}
+
 .nav-link {
-    color: #FFFFFF;
     font-weight: 600;
 }
 
 /* Footer */
 .footer {
     background-color: #000000;
-    color: #FFFFFF;
     position: absolute;
     bottom: 0;
 
@@ -42,4 +45,58 @@ body {
 #copyright {
     text-align: right;
     font-size: 14px;
+    font-family: sans-serif;
+}
+
+@media (min-width: 1200px) {
+    .footer-logo {
+        max-width: 40%
+    }
+}
+
+/* Container */
+.container-title {
+    font-size: 32px;
+    font-weight: 264;
+}
+
+#content-wrap {
+    padding-bottom: 110px;
+}
+
+/* Card Rank */
+
+.card-rank-container {
+    height: 63px;
+
+    font-weight: 264;
+    border-radius: 10px;
+    background-color: #0F1622;
+}
+
+.card-rank-container:nth-child(odd) {
+    background-color: #121C2B;
+}
+
+.card-rank-position {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.card-rank-team {
+    font-size: 20px;
+}
+
+.card-rank-points {
+    font-size: 16px;
+}
+
+/* Bootstrap Overrides */
+a {
+    color: #AC68FF;
+    font-size: 15px;
+}
+
+a:hover {
+    --bs-link-color-rgb: #AC68FF;
 }

@@ -17,17 +17,17 @@ import rootStyle from '~/styles/site.css'
 // ];
 
 export const links: LinksFunction = () => [
-    {
-      rel: "stylesheet",
-      href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",
-      integrity: "sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN",
-      crossOrigin: "anonymous"
-    },
-    {
-      rel: "stylesheet",
-      href: rootStyle
-    }
-  ];
+  {
+    rel: "stylesheet",
+    href: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",
+    integrity: "sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN",
+    crossOrigin: "anonymous"
+  },
+  {
+    rel: "stylesheet",
+    href: rootStyle
+  }
+];
 
 export default function App() {
   return (
@@ -40,7 +40,9 @@ export default function App() {
       </head>
       <body>
         <Header />
-        <Outlet />
+        <div id="content-wrap">
+          <Outlet />
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
