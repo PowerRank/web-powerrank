@@ -1,7 +1,14 @@
+@font-face {
+    font-family: "Shapiro";
+    src: url('../assets/fonts/Shapiro/font.woff2') format('woff2'), 
+    url('../assets/fonts/Shapiro/font.woff') format('woff');
+  }
 
 html,
 body {
     background-color: #0A0E13;
+    color: #FFFFFF;
+    font-family: 'Shapiro';
 }
 
 /* Header */

@@ -8,9 +8,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import Header from "~/components/header";
-import Footer from "~/components/footer";
-import rootStyle from '~/styles/site.css';
+import Header from "~/components/header"
+import Footer from "~/components/footer"
+import rootStyle from '~/styles/site.css'
 
 // export const links: LinksFunction = () => [
 //   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
