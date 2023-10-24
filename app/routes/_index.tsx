@@ -1,8 +1,10 @@
-import type { MetaFunction } from "@remix-run/node";
-import CardRank from "~/components/card-rank"
+import { json, LoaderFunction, type MetaFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
+import CardRankGrid from "~/components/card-rank-grid";
+import PagedRanks from "~/interfaces/PagedRanks";
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,7 +13,15 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export const loader: LoaderFunction = async () => {
+  // let url = window.ENV.API_URL + "/global_rankings?number_of_teams=10";
+  // console.log("API URL: " + url)
+  const ranks = await fetch("https://4bbf91rzf7.execute-api.us-east-1.amazonaws.com/prod/global_rankings?number_of_teams=10");
+  return await ranks.json();
+}
+
 export default function Index() {
+  const loaderData = useLoaderData<PagedRanks | undefined>();
   return (
     <Container className="p-5">
       <Row>
@@ -20,61 +30,13 @@ export default function Index() {
         </div>
       </Row>
       <Row>
-        <CardRank
-          position={1}
-          name="Cloud 9"
-          points={1800}
-        />
-        <CardRank
-          position={2}
-          name="T1"
-          points={1800}
-        />
-        <CardRank
-          position={3}
-          name="JDG"
-          points={1800}
-        />
-        <CardRank
-          position={4}
-          name="Cloud 9"
-          points={1800}
-        />
-        <CardRank
-          position={5}
-          name="Cloud 9"
-          points={1800}
-        />
-        <CardRank
-          position={6}
-          name="Cloud 9"
-          points={1800}
-        />
-        <CardRank
-          position={7}
-          name="Cloud 9"
-          points={1800}
-        />
-        <CardRank
-          position={8}
-          name="Cloud 9"
-          points={1800}
-        />
-        <CardRank
-          position={9}
-          name="Cloud 9"
-          points={1800}
-        />
-        <CardRank
-          position={10}
-          name="Cloud 9"
-          points={1800}
-        />
+        <CardRankGrid
+          ranks={loaderData?.Items} />
       </Row>
       <Row>
         <p className="d-flex justify-content-end">
           <a
-            className="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+            className="see-more-link link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
             href="/world-ranking"
           >
             SEE MORE {">"}

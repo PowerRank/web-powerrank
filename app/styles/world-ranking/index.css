@@ -1,0 +1,52 @@
+/* Row Container */
+/* .row-scrollable {
+    max-height: 65vh;
+    overflow-y: scroll
+} */
+
+/* Filter Labels (Events, Teams) */
+.filter-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.filter-label {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.filter-link {
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+/* Filter Grid */
+.search-backdrop {
+    background-color: #0F1622;
+    border-radius: 4px;
+    height: 63px;
+    padding: 1rem;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    color: #8FA3B0;
+    background-color: #1C232D;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+}
+
+.load-more-button {
+    margin-bottom: 20px;
+    background-color: #AC68FF;
+    color: white;
+}
+
+/* Filter Card */
+.card-active {
+    /* background-color: purple !important; */
+    border-left: 8px solid;
+    border-color: #AC68FF
+}
