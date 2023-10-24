@@ -19,6 +19,7 @@ export default function Header() {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="justify-content-start flex-grow-1">
                     <Nav.Link href="/world-ranking">World Ranking</Nav.Link>
+                    <Nav.Link href="/rating-system">Rating System</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
